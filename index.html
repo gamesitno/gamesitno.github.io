@@ -4,14 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Andersen Games &amp; IT</title>
-  <meta name="description" content="Andersen Games & IT utvikler spill for mobil og andre plattformer, og tilbyr IT-konsulenttjenester.">
+  <meta name="title-nb" content="Andersen Games &amp; IT – spill og IT-konsulenttjenester">
+  <meta name="title-en" content="Andersen Games &amp; IT – games and IT consulting">
+  <meta name="description" content="Andersen Games & IT develops games for mobile and other platforms and provides IT consulting. Sole proprietorship in Norway, org. no. 932 087 138.">
   <link rel="canonical" href="https://gamesit.no/">
+  <script src="lang.js"></script>
   <style>
     :root { --bg:#f7f6f2; --fg:#1d1b22; --muted:#5d5866; --card:#fff; --line:#e3e0d8; --accent:#5b3fd1; }
     @media (prefers-color-scheme: dark) { :root { --bg:#16141b; --fg:#f2f0f6; --muted:#a9a3b4; --card:#211e28; --line:#332f3c; --accent:#a996ff; } }
+    html[data-lang="en"] [data-l="nb"], html[data-lang="nb"] [data-l="en"] { display:none !important; }
     * { box-sizing:border-box; }
     body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
-    main { max-width:820px; margin:0 auto; padding:64px 20px 40px; }
+    .top { max-width:820px; margin:0 auto; padding:20px 20px 0; display:flex; justify-content:flex-end; }
+    .langs button { font:inherit; font-size:.9rem; background:none; border:1px solid var(--line); color:var(--muted); padding:4px 12px; cursor:pointer; }
+    .langs button:first-child { border-radius:8px 0 0 8px; } .langs button:last-child { border-radius:0 8px 8px 0; border-left:0; }
+    .langs button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff; }
+    main { max-width:820px; margin:0 auto; padding:40px 20px 40px; }
     h1 { font-size:clamp(2rem,6vw,3rem); line-height:1.1; margin:0 0 12px; letter-spacing:-.02em; }
     .lead { color:var(--muted); font-size:1.15rem; margin:0 0 40px; max-width:36em; }
     .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
@@ -19,32 +27,51 @@
     a.card:hover { border-color:var(--accent); transform:translateY(-2px); }
     .card h2 { margin:0 0 6px; font-size:1.3rem; }
     .card p { margin:0 0 14px; color:var(--muted); }
-    .card span { color:var(--accent); font-weight:600; }
+    .card span.go { color:var(--accent); font-weight:600; }
+    .info { margin-top:48px; }
+    .info h2 { font-size:1.1rem; margin:0 0 12px; }
+    .info dl { display:grid; grid-template-columns:max-content 1fr; gap:6px 24px; margin:0; }
+    .info dt { color:var(--muted); }
+    .info dd { margin:0; }
+    a { color:var(--accent); }
+    @media (max-width:520px) { .info dl { grid-template-columns:1fr; gap:0; } .info dd { margin-bottom:10px; } }
     footer { max-width:820px; margin:0 auto; padding:24px 20px 48px; color:var(--muted); font-size:.95rem; border-top:1px solid var(--line); }
-    footer a { color:var(--accent); }
   </style>
 </head>
 <body>
+  <div class="top">
+    <div class="langs" role="group" aria-label="Språk / Language">
+      <button type="button" data-set-lang="nb" aria-pressed="false" lang="nb">Norsk</button><button type="button" data-set-lang="en" aria-pressed="false" lang="en">English</button>
+    </div>
+  </div>
   <main>
     <h1>Andersen Games &amp; IT</h1>
-    <p class="lead">Vi lager spill for mobil og andre plattformer, og hjelper bedrifter med IT og programvareutvikling.</p>
+    <p class="lead" data-l="nb" lang="nb">Vi lager spill for mobil og andre plattformer, og hjelper bedrifter med IT og programvareutvikling.</p>
+    <p class="lead" data-l="en" lang="en">We make games for mobile and other platforms, and help businesses with IT and software development.</p>
     <div class="cards">
       <a class="card" href="https://play.gamesit.no/">
-        <h2>Spill</h2>
-        <p>Spillene våre, brukerstøtte og personvernerklæringer.</p>
-        <span>play.gamesit.no →</span>
+        <h2><span data-l="nb" lang="nb">Spill</span><span data-l="en" lang="en">Games</span></h2>
+        <p><span data-l="nb" lang="nb">Spillene våre, brukerstøtte og personvernerklæringer.</span><span data-l="en" lang="en">Our games, support and privacy policies.</span></p>
+        <span class="go">play.gamesit.no →</span>
       </a>
       <a class="card" href="https://tech.gamesit.no/">
-        <h2>Konsulenttjenester</h2>
-        <p>Utvikling og rådgivning innen IT.</p>
-        <span>tech.gamesit.no →</span>
+        <h2><span data-l="nb" lang="nb">Konsulenttjenester</span><span data-l="en" lang="en">Consulting</span></h2>
+        <p><span data-l="nb" lang="nb">Utvikling og rådgivning innen IT.</span><span data-l="en" lang="en">Software development and IT advice.</span></p>
+        <span class="go">tech.gamesit.no →</span>
       </a>
     </div>
+
+    <section class="info" aria-labelledby="info-h">
+      <h2 id="info-h"><span data-l="nb" lang="nb">Om selskapet</span><span data-l="en" lang="en">Company information</span></h2>
+      <dl>
+        <dt><span data-l="nb" lang="nb">Navn</span><span data-l="en" lang="en">Name</span></dt><dd>Andersen Games &amp; IT</dd>
+        <dt><span data-l="nb" lang="nb">Organisasjonsform</span><span data-l="en" lang="en">Legal form</span></dt><dd><span data-l="nb" lang="nb">Enkeltpersonforetak</span><span data-l="en" lang="en">Sole proprietorship (Enkeltpersonforetak)</span></dd>
+        <dt><span data-l="nb" lang="nb">Org.nr.</span><span data-l="en" lang="en">Org. no.</span></dt><dd>932 087 138</dd>
+        <dt><span data-l="nb" lang="nb">Adresse</span><span data-l="en" lang="en">Address</span></dt><dd>Moldekleivmarka 8B, 5919 Frekhaug, <span data-l="nb" lang="nb">Norge</span><span data-l="en" lang="en">Norway</span></dd>
+        <dt><span data-l="nb" lang="nb">E-post</span><span data-l="en" lang="en">Email</span></dt><dd><a href="mailto:post@gamesit.no">post@gamesit.no</a></dd>
+      </dl>
+    </section>
   </main>
-  <footer>
-    <!-- TODO: legg inn riktig selskapsform, org.nr. og adresse -->
-    Andersen Games &amp; IT · Org.nr. [ORG.NR] · Norge<br>
-    Kontakt: <a href="mailto:post@gamesit.no">post@gamesit.no</a>
-  </footer>
+  <footer>© 2026 Andersen Games &amp; IT · Org.nr. 932 087 138 · Moldekleivmarka 8B, 5919 Frekhaug · <a href="mailto:post@gamesit.no">post@gamesit.no</a></footer>
 </body>
 </html>
